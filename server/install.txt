@@ -1,0 +1,16 @@
+npm i express
+npm i nodemon -D
+.gitignore
+
+- Chapter 2 - MERN Middleware
+npm i date-fns uuid
+npm i cookie-parser
+- Chapter 3 - MERN MongoDB
+npm i dotenv
+npm i mongoose
+
+- Chapter 4 - MERN Controllers
+npm i mongoose-sequence
+npm i express-async-handler bcrypt
+
+models => controller => Routes (Add controller methods to the user routes)

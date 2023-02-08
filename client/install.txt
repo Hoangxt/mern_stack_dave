@@ -1,0 +1,2 @@
+Chapter 6 - MERN Redux & RTK Query
+npm i @reduxjs/toolkit react-redux
