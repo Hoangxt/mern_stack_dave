@@ -1,3 +1,3 @@
 # Test case
 
-God dame
+Chapter 6 - MERN Redux & RTK Query
