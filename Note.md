@@ -80,3 +80,14 @@ ACCESS_TOKEN_SECRET: require('crypto').randomBytes(64).toString('hex'),
 7. Unauthenticated users can't access protected routes[problem]
 
 ## Chapter 10 - MERN JWT Authorization & Persisting Login State on Refresh
+
+1. pi folder [Send access token with a baseQuery]
+2. Test the baseQuery requests
+3. baseQueryWithReauth wrapper function
+4. Test the baseQueryWithReauth requests
+5. Fix for useQuery when it doesn't unsubscribe
+6. usePersist custom hook , Add Persist toggle to Login form
+7. Persist Login component
+8. Set credentials with onQueryStarted
+9. Add PersistLogin to App.js
+10. Test the Persistent Login State
