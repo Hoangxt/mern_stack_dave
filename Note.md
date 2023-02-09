@@ -68,3 +68,15 @@ ACCESS_TOKEN_SECRET: require('crypto').randomBytes(64).toString('hex'),
   - Attach user to request object
   - Call next middleware
     => apply to all routes
+
+## Chapter 9 - MERN Login Authentication in React with Redux
+
+1. Create authSlice and add to redux store
+2. Create authApiSlice
+3. Create Login form component
+4. Add Logout Button on header
+5. Test
+6. Refactor NewNote.js
+7. Unauthenticated users can't access protected routes[problem]
+
+## Chapter 10 - MERN JWT Authorization & Persisting Login State on Refresh
