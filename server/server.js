@@ -7,7 +7,7 @@ const { logger, logEvents } = require("./middleware/logger");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const corsOptions = require("./config/corsOptions");
-//
+// MongoDB connection
 const connectDB = require("./config/dbConn");
 const mongoose = require("mongoose");
 
@@ -33,6 +33,7 @@ app.use("/", express.static(path.join(__dirname, "public")));
 
 // Routes
 app.use("/", require("./routes/root"));
+app.use("/auth", require("./routes/authRoutes"));
 app.use("/users", require("./routes/UserRoutes"));
 app.use("/notes", require("./routes/noteRoutes"));
 // // get 404 route
