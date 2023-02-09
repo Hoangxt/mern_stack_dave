@@ -13,7 +13,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
       validateStatus: (response, result) => {
         return response.status === 200 && !result.isError;
       },
-      keepUnusedDataFor: 5,
+      // keepUnusedDataFor: 5,
       transformResponse: (responseData) => {
         // transform the response data to match the normalized state
         const loadedUsers = responseData.map((user) => {
@@ -37,10 +37,44 @@ export const usersApiSlice = apiSlice.injectEndpoints({
         } else return [{ type: "User", id: "LIST" }]; // if the query result is empty
       },
     }),
+    // add new user
+    addNewUser: builder.mutation({
+      query: (initialUserData) => ({
+        url: "/users",
+        method: "POST",
+        body: { ...initialUserData },
+      }),
+      invalidatesTags: [{ type: "User", id: "LIST" }], // invalidate the cache for the list of users
+    }),
+    // update user
+    updateUser: builder.mutation({
+      query: (initialUserData) => ({
+        url: "/users",
+        method: "PATCH",
+        body: {
+          ...initialUserData,
+        },
+      }),
+      invalidatesTags: (result, error, arg) => [{ type: "User", id: arg.id }],
+    }),
+    // delete user
+    deleteUser: builder.mutation({
+      query: ({ id }) => ({
+        url: `/users`,
+        method: "DELETE",
+        body: { id },
+      }),
+      invalidatesTags: (result, error, arg) => [{ type: "User", id: arg.id }],
+    }),
   }),
 });
 
-export const { useGetUsersQuery } = usersApiSlice;
+export const {
+  useGetUsersQuery,
+  useAddNewUserMutation,
+  useUpdateUserMutation,
+  useDeleteUserMutation,
+} = usersApiSlice;
 
 // returns the query result object
 export const selectUsersResult = usersApiSlice.endpoints.getUsers.select();
