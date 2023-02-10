@@ -91,3 +91,12 @@ ACCESS_TOKEN_SECRET: require('crypto').randomBytes(64).toString('hex'),
 8. Set credentials with onQueryStarted
 9. Add PersistLogin to App.js
 10. Test the Persistent Login State
+
+## Chapter 11 - MERN User Role-Based Access Control and Permissions
+
+npm i jwt-decode to decode the token from the server(backend)
+
+1. Create useAuth hook
+2. Modify DashFooter.js [To display the user name and status(role) in the footer]
+3. Welcome [username and link] same as DashFooter.js
+4. Create a RequireAuth wrapper component
